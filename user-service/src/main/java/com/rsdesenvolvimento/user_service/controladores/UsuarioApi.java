@@ -1,6 +1,6 @@
 package com.rsdesenvolvimento.user_service.controladores;
 
-import com.rsdesenvolvimento.user_service.dto.UsuarioDto;
+import com.rsdesenvolvimento.user_service.modelo.dtos.UsuarioDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

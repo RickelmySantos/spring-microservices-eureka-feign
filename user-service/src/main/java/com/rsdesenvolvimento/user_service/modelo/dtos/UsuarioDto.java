@@ -1,4 +1,4 @@
-package com.rsdesenvolvimento.user_service.dto;
+package com.rsdesenvolvimento.user_service.modelo.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
