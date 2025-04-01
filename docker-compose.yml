@@ -30,6 +30,12 @@ services:
       - "8280:8080"
     depends_on:
       - postgres
+    networks:
+      - local-network
 
 volumes:
   pg_data:
+
+networks:
+  local-network:
+    name: local-network

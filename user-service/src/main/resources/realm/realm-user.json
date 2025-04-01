@@ -1,0 +1,50 @@
+{
+  "realm": "dev",
+  "enabled": true,
+  "clients": [
+    {
+      "clientId": "user-service",
+      "secret": "secret",
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": true,
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": true,
+      "publicClient": false,
+      "protocol": "openid-connect",
+      "redirectUris": ["http://localhost:8081/*"],
+      "webOrigins": ["+"],
+      "attributes": {
+        "client.secret": "secret"
+      }
+    }
+  ],
+  "roles": {
+    "realm": [{ "name": "ROLE_USER" }, { "name": "ROLE_ADMIN" }]
+  },
+  "users": [
+    {
+      "username": "xpto",
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "12345",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["ROLE_USER"]
+    },
+    {
+      "username": "11111111111",
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "12345",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["ROLE_ADMIN"]
+    }
+  ]
+}
