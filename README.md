@@ -28,7 +28,7 @@ O `order-service` consome o `user-service` via **Feign**, usando o **nome regist
 
 - Java 17+
 - Maven
-- (opcional) Docker
+- Docker
 
 ### Passos
 
