@@ -24,11 +24,14 @@ O `order-service` consome o `user-service` via **Feign**, usando o **nome regist
 
 ## 🚀 Como executar
 
+Na pasta raiz do projeto execute o comando **docker compose up**, assim irar buildar e criar todos os containers
+
 ### Pré-requisitos
 
-- Java 17+
+- Java 21
 - Maven
 - Docker
+- Keycloak
 
 ### Passos
 

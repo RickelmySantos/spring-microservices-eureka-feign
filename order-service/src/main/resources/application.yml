@@ -10,7 +10,7 @@ spring:
         registration:
           keycloak:
             client-id: order-service
-            client-secret: PfSbqzShpIRAWTtqwYbCs2y44KaO9VVZ
+            client-secret: ${KEYCLOAK_CLIENT_SECRET}
             authorization-grant-type: client_credentials
             scope: openid
         provider:
@@ -22,4 +22,5 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      # defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://eureka-server:8761/eureka/
