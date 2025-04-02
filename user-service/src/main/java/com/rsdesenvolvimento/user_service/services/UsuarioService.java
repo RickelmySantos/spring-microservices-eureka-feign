@@ -25,4 +25,11 @@ public class UsuarioService {
   public List<UsuarioDto> listar() {
     return this.repository.findAll().stream().map(this.mapper::paraDto).toList();
   }
+
+  public UsuarioDto buscarPorId(Long id) {
+    Usuario usuario = this.repository.findById(id)
+        .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+    return this.mapper.paraDto(usuario);
+  }
+
 }
