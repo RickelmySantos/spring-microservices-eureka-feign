@@ -5,7 +5,9 @@ import com.rsdesenvolvimento.user_service.modelo.entidades.Usuario;
 import com.rsdesenvolvimento.user_service.modelo.mappers.UsuarioMapper;
 import com.rsdesenvolvimento.user_service.repositorios.UsuarioRepository;
 import java.util.List;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 @Service
 public class UsuarioService {
@@ -27,8 +29,8 @@ public class UsuarioService {
   }
 
   public UsuarioDto buscarPorId(Long id) {
-    Usuario usuario = this.repository.findById(id)
-        .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+    Usuario usuario = this.repository.findById(id).orElseThrow(
+        () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuário não encontrado"));
     return this.mapper.paraDto(usuario);
   }
 

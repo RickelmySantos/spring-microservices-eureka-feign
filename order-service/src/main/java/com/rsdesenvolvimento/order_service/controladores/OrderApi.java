@@ -19,7 +19,7 @@ public class OrderApi {
   @GetMapping("/{id}")
   public String buscarServico(@PathVariable Long id) {
     UsuarioDto usuarioDto = this.usuarioClient.buscarUsuario(id);
-    return "Serviço de pedido chamado por " + usuarioDto.getName();
+    return "Serviço de pedido chamado por " + usuarioDto.getNome();
   }
 
 }

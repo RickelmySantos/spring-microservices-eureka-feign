@@ -1,9 +1,21 @@
+server:
+  port: 8082
+
 spring:
   application:
     name: order-service
-
-server:
-  port: 8082
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: order-service
+            client-secret: PfSbqzShpIRAWTtqwYbCs2y44KaO9VVZ
+            authorization-grant-type: client_credentials
+            scope: openid
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8280/realms/microservicos-realm
 
 eureka:
   client:

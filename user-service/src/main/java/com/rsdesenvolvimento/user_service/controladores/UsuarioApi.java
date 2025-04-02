@@ -3,6 +3,7 @@ package com.rsdesenvolvimento.user_service.controladores;
 import com.rsdesenvolvimento.user_service.modelo.dtos.UsuarioDto;
 import com.rsdesenvolvimento.user_service.services.UsuarioService;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,5 +36,12 @@ public class UsuarioApi {
     return this.service.buscarPorId(id);
   }
 
-
+  @PreAuthorize("hasRole('ROLE_ORDER_SERVICE')")
+  @GetMapping("/interno/{id}")
+  public UsuarioDto buscarPorIdInterno(@PathVariable Long id) {
+    var auth = SecurityContextHolder.getContext().getAuthentication();
+    System.out.println("Auth name: " + auth.getName());
+    System.out.println("Authorities: " + auth.getAuthorities());
+    return this.service.buscarPorId(id);
+  }
 }
